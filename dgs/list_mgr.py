@@ -2,6 +2,7 @@ import csv
 import requests
 from io import StringIO
 
+domains = []
 list_of_contacts = {}
 
 def load_list(list_url):
@@ -19,3 +20,4 @@ def load_list(list_url):
         if email == '(blank)':
             email = None
         list_of_contacts[domain] = email
+        domains.append(domain)

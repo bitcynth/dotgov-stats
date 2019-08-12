@@ -10,6 +10,8 @@ def index():
 @app.route('/r/<domain>')
 def report(domain):
     domain = domain.lower()
+    if not domain in list_mgr.domains:
+        return render_template('report.html', domain=domain, valid=False)
     report_email = None
     if domain in list_mgr.list_of_contacts:
         report_email = list_mgr.list_of_contacts[domain]

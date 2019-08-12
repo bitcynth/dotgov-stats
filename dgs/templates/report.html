@@ -11,6 +11,8 @@
         <main>
             {% if report_email %}
             Please report your security issue regarding <b>{{ domain }}</b> to <a href="mailto:{{ report_email }}">{{ report_email }}</a>
+            {% elif valid == False %}
+            <b>{{ domain }}</b> is not an existing .gov domain.
             {% else %}
             Sadly <b>{{ domain }}</b> does not have a security reporting email address defined.<br>
             If you work for/are in contact with <b>{{ domain }}</b> please send the relevant people the following link <a href="https://home.dotgov.gov/management/security-best-practices/#add-a-security-contact">https://home.dotgov.gov/management/security-best-practices/#add-a-security-contact</a> so they can update it.
