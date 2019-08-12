@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Report! | .gov Stats</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="HandheldFriendly" content="true">
+		<link rel="stylesheet" href="/static/css/style.css">
+    </head>
+    <body>
+        <main>
+            {% if report_email %}
+            Please report your security issue regarding <b>{{ domain }}</b> to <a href="mailto:{{ report_email }}">{{ report_email }}</a>
+            {% else %}
+            Sadly <b>{{ domain }}</b> does not have a security reporting email address defined.<br>
+            If you work for/are in contact with <b>{{ domain }}</b> please send the relevant people the following link <a href="https://home.dotgov.gov/management/security-best-practices/#add-a-security-contact">https://home.dotgov.gov/management/security-best-practices/#add-a-security-contact</a> so they can update it.
+            <br>
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SrDSqODtEFM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            {% endif %}
+        </main>
+        <footer>
+            Copyright &copy; 2019 <a href="https://cynthia.re">Cynthia Maja Revström</a>.<br>
+            .gov Stats is not affiliated with any government on any level, nor is it affiliated with VeriSign, Inc.
+        </footer>
+    </body>
+</html>
